@@ -16,7 +16,7 @@ user node['mongodb']['user'] do
   action   [:create]
 end
 
-directory "/var/lib/mongodb" do
+directory node['mongodb']['config']['dbpath'] do
   owner node['mongodb']['user']
   group node['mongodb']['user']
   mode "0755"
