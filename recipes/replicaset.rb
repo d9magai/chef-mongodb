@@ -20,7 +20,7 @@
 node.set['mongodb']['is_replicaset'] = true
 node.set['mongodb']['cluster_name'] = node['mongodb']['cluster_name']
 
-include_recipe 'mongodb::install'
+include_recipe 'mongodb::init'
 include_recipe 'mongodb::mongo_gem'
 
 unless node['mongodb']['is_shard']

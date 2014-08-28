@@ -23,7 +23,7 @@ node.set['mongodb']['is_mongos'] = true
 node.set['mongodb']['shard_name'] = node['mongodb']['shard_name']
 node.override['mongodb']['instance_name'] = 'mongos'
 
-include_recipe 'mongodb::install'
+include_recipe 'mongodb::init'
 include_recipe 'mongodb::mongo_gem'
 
 service node[:mongodb][:default_init_name] do
