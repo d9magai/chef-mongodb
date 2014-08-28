@@ -47,7 +47,12 @@ template init_file do
 end
 
 # install mongodb
-include_recipe 'mongodb::install'
+
+if node[:mongodb][:from_archive] then
+  include_recipe 'mongodb::install_from_archive'
+else
+  include_recipe 'mongodb::install_from_package'
+end
 
 # Create keyFile if specified
 if node[:mongodb][:key_file_content]
