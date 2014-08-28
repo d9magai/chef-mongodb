@@ -24,7 +24,7 @@ node.set['mongodb']['shard_name'] = node['mongodb']['shard_name']
 node.set['mongodb']['is_replicaset'] = node['mongodb']['is_replicaset']
 node.set['mongodb']['cluster_name'] = node['mongodb']['cluster_name']
 
-include_recipe 'mongodb::install'
+include_recipe 'mongodb::init'
 
 # we are not starting the shard service with the --shardsvr
 # commandline option because right now this only changes the port it's

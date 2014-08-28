@@ -19,7 +19,7 @@
 # limitations under the License.
 #
 
-include_recipe 'mongodb::install'
+include_recipe 'mongodb::init'
 
 # allow mongodb_instance to run if recipe isn't included
 allow_mongodb_instance_run = true

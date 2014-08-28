@@ -6,3 +6,8 @@ Berksfile.lock
 Gemfile.lock
 
 metadata.json
+
+.buildpath
+.project
+.settings
+

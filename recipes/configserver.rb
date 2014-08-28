@@ -23,7 +23,7 @@ node.set['mongodb']['is_configserver'] = true
 node.set['mongodb']['cluster_name'] = node['mongodb']['cluster_name']
 node.set['mongodb']['shard_name'] = node['mongodb']['shard_name']
 
-include_recipe 'mongodb::install'
+include_recipe 'mongodb::init'
 
 # mongodb_instance will set configsvr = true in the config file.
 # http://docs.mongodb.org/manual/reference/configuration-options/#sharded-cluster-options
