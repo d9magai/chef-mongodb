@@ -14,8 +14,8 @@ link "#{node[:mongodb][:from_archive][:install_path]}/mongodb" do
 end
 
 user node['mongodb']['user'] do
-  supports :manage_home => false
-  action   [:create]
+  system true
+  shell "/bin/false"
 end
 
 directory node['mongodb']['config']['dbpath'] do
