@@ -1,6 +1,7 @@
 archive_filename = File.basename node[:mongodb][:from_archive][:url]
 remote_file "#{Chef::Config[:file_cache_path]}/#{archive_filename}" do
   source node[:mongodb][:from_archive][:url]
+  checksum "#{node[:mongodb][:from_archive][:checksum]}"
 end
 
 archive_basename = File.basename(archive_filename, '.*')
