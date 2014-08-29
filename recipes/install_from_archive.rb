@@ -14,21 +14,21 @@ link "#{node[:mongodb][:from_archive][:install_path]}/mongodb" do
   to archive_basename
 end
 
-user node['mongodb']['user'] do
+user node[:mongodb][:user] do
   system true
   shell "/bin/false"
 end
 
-directory node['mongodb']['config']['dbpath'] do
-  owner node['mongodb']['user']
-  group node['mongodb']['user']
+directory node[:mongodb][:config][:dbpath] do
+  owner node[:mongodb][:user]
+  group node[:mongodb][:user]
   mode "0755"
   action :create
 end
 
 directory "/var/run/mongo" do
-  owner node['mongodb']['user']
-  group node['mongodb']['user']
+  owner node[:mongodb][:user]
+  group node[:mongodb][:user]
   mode "0755"
   action :create
 end
