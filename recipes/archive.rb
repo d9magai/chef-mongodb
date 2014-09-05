@@ -23,6 +23,7 @@ directory node[:mongodb][:config][:dbpath] do
   owner node[:mongodb][:user]
   group node[:mongodb][:user]
   mode "0755"
+  recursive true
   action :create
 end
 
@@ -30,5 +31,6 @@ directory "/var/run/mongo" do
   owner node[:mongodb][:user]
   group node[:mongodb][:user]
   mode "0755"
+  recursive true
   action :create
 end
