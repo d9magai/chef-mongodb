@@ -1,7 +1,7 @@
 include_attribute 'mongodb::default'
 
-if node[:mongodb][:from_archive] then
-  default['mongodb']['sysconfig']['DAEMON'] = "#{node['mongodb']['from_archive']['install_path']}/mongodb/bin/$NAME"
+if node[:mongodb][:install_method] == 'archive' then
+  default['mongodb']['sysconfig']['DAEMON'] = "#{node['mongodb']['archive']['install_path']}/mongodb/bin/$NAME"
 else
   default['mongodb']['sysconfig']['DAEMON'] = '/usr/bin/$NAME'
 end
