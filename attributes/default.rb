@@ -104,6 +104,7 @@ default[:mongodb][:template_cookbook] = 'mongodb'
 default[:mongodb][:key_file_content] = nil
 
 default[:mongodb][:from_archive] = nil
+default[:mongodb][:install_method] = 'package'
 
 # install the mongo and bson_ext ruby gems at compile time to make them globally available
 # TODO: remove bson_ext once mongo gem supports bson >= 2
